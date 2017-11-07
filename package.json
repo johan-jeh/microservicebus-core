@@ -20,7 +20,7 @@
     "moment": "2.10.3",
     "network": "^0.4.0",
     "node-persist": "0.0.6",
-    "npm": "3.10.9",
+    "npm": "5.5.1",
     "progress": "^1.1.8",
     "request": "^2.79.0",
     "require-reload": "0.2.2",
@@ -58,12 +58,12 @@
   "name": "microservicebus-core",
   "repository": {
     "type": "git",
-    "url": "https://github.com/qbranch-code/microservicebus-core"
+    "url": "https://github.com/axians/microservicebus-core"
   },
   "scripts": {
     "lint": "jshint Utils.js",
     "succcess": "mocha Tests/successfulSignIn.js",
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
   },
-  "version": "1.0.34"
+  "version": "1.0.40"
 }
