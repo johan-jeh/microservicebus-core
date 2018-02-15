@@ -7,7 +7,6 @@
   "bin": {},
   "dependencies": {
     "async": "1.4.2",
-    "chokidar": "1.0.5",
     "colors": "1.1.2",
     "diskusage": "^0.2.4",
     "exists-sync": "0.0.3",
@@ -58,5 +57,5 @@
     "succcess": "mocha Tests/successfulSignIn.js",
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
   },
-  "version": "1.0.83"
+  "version": "1.0.85"
 }
