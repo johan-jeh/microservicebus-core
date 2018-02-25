@@ -18,7 +18,7 @@
     "moment": "2.20.0",
     "moment-timezone": "0.5.14",
     "network": "0.4.0",
-    "node-persist": "0.0.6",
+    "node-persist": "2.1.0",
     "npm": "5.5.1",
     "progress": "1.1.8",
     "request": "2.81.0",
@@ -57,5 +57,5 @@
     "succcess": "mocha Tests/successfulSignIn.js",
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
   },
-  "version": "1.0.86"
+  "version": "1.1.2"
 }
