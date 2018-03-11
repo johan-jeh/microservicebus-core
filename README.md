@@ -59,13 +59,12 @@ var exports = module.exports = {
         // TO DO! This is where you code for when a message is sent
         // to this host.
         
-        
         var x = JSON.parse("<test/>");
-        console.log('');
-        console.log('The Process method is called.');
+        base.Debug('');
+        base.Debug('The Process method is called.');
         var payload = JSON.stringify(message);
-        console.log(payload);
-        console.log('');
+        base.Debug(payload);
+        base.Debug('');
     },  
 }
 
