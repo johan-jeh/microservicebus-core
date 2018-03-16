@@ -22,12 +22,12 @@
     "progress": "1.1.8",
     "request": "2.81.0",
     "require-reload": "0.2.2",
+    "underscore": "1.8.3",
     "uuid": "2.0.3",
     "websocket": "1.0.25"
   },
   "description": "node.js node for microservicebus. Please visit microservicebus.com for more information.",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=0.12.0 <7.3.1"
   },
@@ -56,5 +56,5 @@
     "succcess": "mocha Tests/successfulSignIn.js",
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
   },
-  "version": "1.1.13"
+  "version": "1.1.22"
 }
