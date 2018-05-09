@@ -1,15 +1,6 @@
 ﻿![alt](https://blogical.blob.core.windows.net/microservicebus/Logosmall.png)
 
-[![Build Status](https://travis-ci.org/microServiceBus/microservicebus.node.svg?branch=master)](https://travis-ci.org/microServiceBus/microservicebus.node/)
-[![Stories in Ready](https://badge.waffle.io/microServiceBus/microservicebus.node.svg?label=ready&title=Ready)](http://waffle.io/microServiceBus/microservicebus.node)
-
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FmicroServiceBus%2Fmicroservicebus.node%2Fmaster%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FmicroServiceBus%2Fmicroservicebus.node%2Fmaster%2Fazuredeploy.json" target="_blank">
-    <img src="http://armviz.io/visualizebutton.png"/>
-</a>
-
+[![Build Status](https://travis-ci.org/axians/microservicebus-core.svg?branch=dev)](https://travis-ci.org/axians/microservicebus-core)
  
 # microservicebus-core
 microServiceBus.com is an integration platform for IoT and enterprise applications. This platform lets you expose microservices from small devices and large systems using a hosting infrastructure. These host can run on both Linux and Windows using components built either natively or using node.js.
