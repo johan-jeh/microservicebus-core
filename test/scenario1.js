@@ -1,4 +1,4 @@
-'use strict'; /* global describe, it */
+'use strict'; /* global describe, it */ 
 
 var path = require('path');
 var initialArgs = process.argv[1];
