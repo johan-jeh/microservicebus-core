@@ -27,7 +27,14 @@
     "websocket": "1.0.25"
   },
   "description": "node.js node for microservicebus. Please visit microservicebus.com for more information.",
-  "devDependencies": {},
+  "devDependencies": {
+    "app-module-path": "^2.2.0",
+    "chai": "4.1.2",
+    "mocha": "5.1.1",
+    "nyc": "11.7.2",
+    "should": "13.2.1",
+    "supertest": "3.0.0"
+  },
   "engines": {
     "node": ">=0.12.0 <7.3.1"
   },
@@ -56,5 +63,5 @@
     "succcess": "mocha Tests/successfulSignIn.js",
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
   },
-  "version": "1.1.62"
+  "version": "1.1.67"
 }
