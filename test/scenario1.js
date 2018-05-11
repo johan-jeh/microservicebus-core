@@ -89,7 +89,7 @@ describe('Check configuration', function () {
         orgId = process.env.organizationId;
         console.log('organizationId: ' + orgId + ' ,nodeKey: ' + process.env.nodeKey);
         expect(orgId).to.not.be.null;
-
+ 
         done();
     });
     it('ENV nodeKey should be set', function (done) {
