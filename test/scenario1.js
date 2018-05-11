@@ -87,7 +87,7 @@ describe('Encryption/Decryption', function () {
 describe('Check configuration', function () {
     it('ENV organizationId should be set', function (done) {
         orgId = process.env.organizationId;
-        console.log('organizationId: ' + orgId + ' ,nodeKey: ' + process.env.nodeKey);
+        console.log('organizationId: ' + orgId );
         expect(orgId).to.not.be.null;
  
         done();
