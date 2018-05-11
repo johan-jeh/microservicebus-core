@@ -127,6 +127,7 @@ describe('Sign in', function () {
         loggedInComplete1 = false;
         MicroServiceBusHost = require("../lib/MicroServiceBusHost.js");
         microServiceBusHost = new MicroServiceBusHost(settingsHelper);
+        microServiceBusHost.SetTestParameters();
         expect(microServiceBusHost).to.not.be.null;
         done();
     });
@@ -153,6 +154,27 @@ describe('Sign in', function () {
         }
 
     });
+    it('Enable tracking should work', function (done) {
+        this.timeout(60000);
+        var r = microServiceBusHost.TestOnChangeTracking(function(enabledTracking){
+            expect(enabledTracking).to.equal(true);
+            done();    
+        });
+    });
+    it('Report state should work', function (done) {
+        this.timeout(60000);
+        var r = microServiceBusHost.TestOnReportState(function(sucess){
+            expect(sucess).to.equal(true);
+            done();    
+        });
+    });
+    it('Upload syslogs should work', function (done) {
+        this.timeout(60000);
+        var r = microServiceBusHost.TestOnUploadSyslogs(function(sucess){
+            expect(sucess).to.equal(true);
+            done();    
+        });
+    });
     it('Ping should work', function (done) {
         this.timeout(60000);
         var r = microServiceBusHost.TestOnPing("test");
@@ -161,9 +183,11 @@ describe('Sign in', function () {
     });
     it('Change Debug state should work', function (done) {
         this.timeout(60000);
-        var r = microServiceBusHost.TestOnChangeDebug(true);
-        expect(r).to.equal(true);
-        done();
+        microServiceBusHost.TestOnChangeDebug(function(success){
+            expect(success).to.equal(true);
+            done();
+    
+        });
     });
 });
 
@@ -244,11 +268,7 @@ describe('Post Signin', function () {
         pingResponse.should.equal(true);
         done();
     });
-    it('change debug state should work', function (done) {
-        var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeDebug(false);
-        TestOnChangeDebugResponse.should.equal(true);
-        done();
-    });
+    
     it('change state should work', function (done) {
         var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeState("Stop");
         done();
