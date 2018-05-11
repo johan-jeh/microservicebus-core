@@ -87,13 +87,15 @@ describe('Encryption/Decryption', function () {
 describe('Check configuration', function () {
     it('ENV organizationId should be set', function (done) {
         orgId = process.env.organizationId;
-        nodeKey = process.env.nodeKey;
+        console.log('organizationId: ' + orgId + ' ,nodeKey: ' + process.env.nodeKey);
         expect(orgId).to.not.be.null;
 
         done();
     });
     it('ENV nodeKey should be set', function (done) {
         nodeKey = process.env.nodeKey;
+        console.log('nodeKey: ' + nodeKey);
+
         expect(nodeKey).to.not.be.null;
 
         done();
@@ -111,10 +113,10 @@ describe('Sign in', function () {
             "useEncryption": false,
             "log": "",
             "nodeName": "unitTestNode1",
-            "organizationId": process.env.organizationid,
+            "organizationId": orgId,
             "machineName": "unitTestNode1",
             "id": "644424d1-b591-4fd0-b7c2-29736b2f51ac",
-            "sas": process.env.nodeKey,
+            "sas": nodeKey,
             "port": 9090
         };
         settingsHelper.settings = settings;
