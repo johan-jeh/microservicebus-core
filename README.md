@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/axians/microservicebus-core.svg?branch=dev)](https://travis-ci.org/axians/microservicebus-core)
 [![Downloads](https://img.shields.io/npm/dm/node-mbus.svg)](https://www.npmjs.com/package/microservicebus-core)
+[![npm](https://img.shields.io/npm/v/microservicebus-core.svg)](https://www.npmjs.com/package/microservicebus-core)
+
 
 # microservicebus-core
 microServiceBus.com is an integration platform for IoT and enterprise applications. This platform lets you expose microservices from small devices and large systems using a hosting infrastructure. These host can run on both Linux and Windows using components built either natively or using node.js.
