@@ -34,3 +34,4 @@ bin
 .vscode
 typings
 *.bat
+.nyc_output/*
