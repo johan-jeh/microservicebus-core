@@ -6,6 +6,7 @@
   },
   "bin": {},
   "dependencies": {
+    
     "exists-sync": "0.0.3",
     "extend": "3.0.1",
     "getmac": "1.2.1",
@@ -16,17 +17,24 @@
     "moment-timezone": "0.5.14",
     "node-persist": "2.1.0",
     "progress": "1.1.8",
+    "request": "2.81.0",
+    "require-reload": "0.2.2",
     "underscore": "1.8.3",
     "websocket": "1.0.25"
   },
   "description": "node.js node for microservicebus. Please visit microservicebus.com for more information.",
   "devDependencies": {
+    "async": "1.4.2",
+    "colors": "1.1.2",
     "app-module-path": "^2.2.0",
     "chai": "4.1.2",
     "mocha": "5.1.1",
+    "network": "0.4.0",
+    "npm": "6.0.0",
     "nyc": "11.7.2",
     "should": "13.2.1",
-    "supertest": "3.0.0"
+    "supertest": "3.0.0",
+    "uuid": "2.0.3"
   },
   "engines": {
     "node": ">=0.12.0 <7.3.1"
