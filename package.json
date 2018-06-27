@@ -6,8 +6,6 @@
   },
   "bin": {},
   "dependencies": {
-    "async": "1.4.2",
-    "colors": "1.1.2",
     "exists-sync": "0.0.3",
     "extend": "3.0.1",
     "getmac": "1.2.1",
@@ -16,14 +14,9 @@
     "lodash": "4.17.4",
     "moment": "2.20.0",
     "moment-timezone": "0.5.14",
-    "network": "0.4.0",
     "node-persist": "2.1.0",
-    "npm": "6.0.0",
     "progress": "1.1.8",
-    "request": "2.81.0",
-    "require-reload": "0.2.2",
     "underscore": "1.8.3",
-    "uuid": "2.0.3",
     "websocket": "1.0.25"
   },
   "description": "node.js node for microservicebus. Please visit microservicebus.com for more information.",
@@ -62,5 +55,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "1.1.79"
+  "version": "1.1.82"
 }
