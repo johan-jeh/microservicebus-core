@@ -24,7 +24,7 @@
     "require-reload": "0.2.2",
     "underscore": "1.8.3",
     "uuid": "2.0.3",
-    "websocket": "1.0.25"
+    "websocket": "1.0.26"
   },
   "description": "node.js node for microservicebus. Please visit microservicebus.com for more information.",
   "devDependencies": {
@@ -63,5 +63,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "1.2.6"
+  "version": "1.2.9"
 }
