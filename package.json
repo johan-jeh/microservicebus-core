@@ -13,7 +13,6 @@
     "getmac": "1.2.1",
     "graceful-fs": "4.1.5",
     "linq": "3.0.5",
-    "lodash": "4.17.4",
     "moment": "2.20.0",
     "moment-timezone": "0.5.14",
     "network": "0.4.0",
@@ -24,7 +23,7 @@
     "require-reload": "0.2.2",
     "underscore": "1.8.3",
     "uuid": "2.0.3",
-    "websocket": "1.0.25"
+    "websocket": "1.0.26"
   },
   "description": "node.js node for microservicebus. Please visit microservicebus.com for more information.",
   "devDependencies": {
@@ -37,7 +36,7 @@
     "supertest": "3.0.0"
   },
   "engines": {
-    "node": ">=0.12.0 <7.3.1"
+    "node": ">=0.12.0 <9.9.9"
   },
   "keywords": [
     "IoT",
@@ -63,5 +62,5 @@
     "lint": "jshint Utils.js",
     "test": "nyc --reporter=html --reporter=text mocha"
   },
-  "version": "1.1.95"
+  "version": "1.2.18"
 }

@@ -25,6 +25,5 @@ SOFTWARE.
 'use strict';
 
 module.exports = {
-    Host: require('./lib/MicroServiceBusHost.js'),
-    DebugHost: require('./lib/DebugHost.js')
+    Host: require('./lib/MicroServiceBusHost.js')
 };
