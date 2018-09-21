@@ -141,15 +141,12 @@ describe('Sign in', function () {
         microServiceBusHost.OnStopped(function () {
 
         });
-        microServiceBusHost.OnUpdatedItineraryComplete(function () {
-
-        });
         try {
             microServiceBusHost.Start();
 
         }
         catch (er) {
-            expect(err).to.be.null;
+            expect(er).to.be.null;
             done();
         }
 
@@ -268,7 +265,24 @@ describe('Post Signin', function () {
         pingResponse.should.equal(true);
         done();
     });
-    
+    it('Update itinerary should work', function (done){
+
+        var updatedItinerary = JSON.parse(fs.readFileSync("./test/updatedItinerary.json")); 
+        microServiceBusHost.TestOnUpdateItinerary(updatedItinerary);
+        microServiceBusHost.OnUpdatedItineraryComplete(function(err){
+            err.should.equal(undefined);
+            done();
+        });
+    });
+    it('Update itinerary should fail', function (done){
+
+        var updatedItinerary = "Fail";
+        microServiceBusHost.TestOnUpdateItinerary(updatedItinerary);
+        microServiceBusHost.OnUpdatedItineraryComplete(function(err){
+            err.should.not.equal(undefined);
+            done();
+        });
+    });
     it('change state should work', function (done) {
         var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeState("Stop");
         done();
