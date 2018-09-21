@@ -1,4 +1,4 @@
-'use strict'; /* global describe, it */ 
+'use strict'; /* global describe, it */
 
 var path = require('path');
 var initialArgs = process.argv[1];
@@ -16,6 +16,7 @@ var SettingsHelper;
 var settingsHelper;
 var orgId;
 var nodeKey;
+var signedIn = false;
 var settings;
 var loggedInComplete1;
 var microServiceBusHost;
@@ -87,9 +88,9 @@ describe('Encryption/Decryption', function () {
 describe('Check configuration', function () {
     it('ENV organizationId should be set', function (done) {
         orgId = process.env.organizationId;
-        console.log('organizationId: ' + orgId );
+        console.log('organizationId: ' + orgId);
         expect(orgId).to.not.be.null;
- 
+
         done();
     });
     it('ENV nodeKey should be set', function (done) {
@@ -124,19 +125,30 @@ describe('Sign in', function () {
         done();
     });
     it('Create microServiceBus Node should work', function (done) {
-        loggedInComplete1 = false;
-        MicroServiceBusHost = require("../lib/MicroServiceBusHost.js");
-        microServiceBusHost = new MicroServiceBusHost(settingsHelper);
-        microServiceBusHost.SetTestParameters();
-        expect(microServiceBusHost).to.not.be.null;
-        done();
+        try {
+            loggedInComplete1 = false;
+            MicroServiceBusHost = require("../lib/MicroServiceBusHost.js");
+            microServiceBusHost = new MicroServiceBusHost(settingsHelper);
+            microServiceBusHost.SetTestParameters();
+            expect(microServiceBusHost).to.not.be.null;
+            done();
+        }
+        catch (err) {
+            expect(err).to.be.null;
+            done();
+        }
     });
     it('Sign in should work', function (done) {
         this.timeout(60000);
         microServiceBusHost.OnStarted(function (loadedCount, exceptionCount) {
-            expect(exceptionCount).to.eql(0);
-            expect(loadedCount).to.eql(1);
-            done();
+            if (!signedIn) {
+                expect(exceptionCount).to.eql(0);
+                expect(loadedCount).to.eql(1);
+                signedIn = true;
+                done();
+
+            }
+
         });
         microServiceBusHost.OnStopped(function () {
 
@@ -153,23 +165,23 @@ describe('Sign in', function () {
     });
     it('Enable tracking should work', function (done) {
         this.timeout(60000);
-        var r = microServiceBusHost.TestOnChangeTracking(function(enabledTracking){
+        var r = microServiceBusHost.TestOnChangeTracking(function (enabledTracking) {
             expect(enabledTracking).to.equal(true);
-            done();    
+            done();
         });
     });
     it('Report state should work', function (done) {
         this.timeout(60000);
-        var r = microServiceBusHost.TestOnReportState(function(sucess){
+        var r = microServiceBusHost.TestOnReportState(function (sucess) {
             expect(sucess).to.equal(true);
-            done();    
+            done();
         });
     });
     it('Upload syslogs should work', function (done) {
         this.timeout(60000);
-        var r = microServiceBusHost.TestOnUploadSyslogs(function(sucess){
+        var r = microServiceBusHost.TestOnUploadSyslogs(function (sucess) {
             expect(sucess).to.equal(true);
-            done();    
+            done();
         });
     });
     it('Ping should work', function (done) {
@@ -180,10 +192,10 @@ describe('Sign in', function () {
     });
     it('Change Debug state should work', function (done) {
         this.timeout(60000);
-        microServiceBusHost.TestOnChangeDebug(function(success){
+        microServiceBusHost.TestOnChangeDebug(function (success) {
             expect(success).to.equal(true);
             done();
-    
+
         });
     });
 });
@@ -265,24 +277,7 @@ describe('Post Signin', function () {
         pingResponse.should.equal(true);
         done();
     });
-    it('Update itinerary should work', function (done){
-
-        var updatedItinerary = JSON.parse(fs.readFileSync("./test/updatedItinerary.json")); 
-        microServiceBusHost.TestOnUpdateItinerary(updatedItinerary);
-        microServiceBusHost.OnUpdatedItineraryComplete(function(err){
-            err.should.equal(undefined);
-            done();
-        });
-    });
-    it('Update itinerary should fail', function (done){
-
-        var updatedItinerary = "Fail";
-        microServiceBusHost.TestOnUpdateItinerary(updatedItinerary);
-        microServiceBusHost.OnUpdatedItineraryComplete(function(err){
-            err.should.not.equal(undefined);
-            done();
-        });
-    });
+    
     it('change state should work', function (done) {
         var TestOnChangeDebugResponse = microServiceBusHost.TestOnChangeState("Stop");
         done();
